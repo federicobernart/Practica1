@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: instala imagen influxdb desde docker hub
+      community.docker.docker_image:
+        name: influxdb:1.8
+        source: pull
+        pull:
+          amd64
